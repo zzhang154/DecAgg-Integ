@@ -1,0 +1,22 @@
+set pagination off
+set logging on
+set logging file log_file/gdb.txt
+set logging overwrite on
+
+# Stop on various fatal signals:
+handle SIGSEGV stop
+handle SIGABRT stop
+handle SIGILL stop
+handle SIGBUS stop
+handle SIGFPE stop
+handle SIGINT stop
+handle SIGTERM stop
+
+# Whenever the program stops (like a crash), do a full backtrace
+define hook-stop
+  echo [Program stopped: printing stack trace]
+  bt
+end
+
+run
+quit

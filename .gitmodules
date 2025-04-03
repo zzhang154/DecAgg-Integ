@@ -1,0 +1,3 @@
+[submodule "src/ndnSIM"]
+	path = src/ndnSIM
+	url = https://github.com/zzhang154/Decentralized-Aggregation
